@@ -1,5 +1,4 @@
 //FastCommerce Grid [08.07.2015] v1
-
 var FCGrid$ = function () {
   "use strict";
   var product = {}, myOptions = {}, aProductList, aProductOnlyOne;
@@ -264,7 +263,7 @@ var FCGrid$ = function () {
             oPositionTableDiscount.innerHTML = "<div id='PriceAVista'><p>Para pagamentos ? vista ganhe <b>" + iDescontoAvista + "% de desconto</b>.</p><p>Valor com desconto <b>" + FormatPrice(product.priceNum * ((100 - iDescontoAvista) / 100), FC$.Currency) + "</b></p></div>";
           }
         }
-        
+
         if(product.priceNum!=product.priceOri){
            return oPositionPrice.innerHTML="de <strike>"+FCLib$.FormatPreco(FormatPrice(product.priceOri,FC$.Currency))+"</strike> por <b>"+FCLib$.FormatPreco(FormatPrice(product.priceNum,FC$.Currency))+"</b> " + oMaxInstallments + oEconomyJS;
          }
