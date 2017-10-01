@@ -3,7 +3,7 @@ var FCGrid$ = function () {
   "use strict";
   var product = {}, myOptions = {}, aProductList, aProductOnlyOne;
 
-  //optionsigurações internas da funcão
+  //optionsigurações internas da func?o
   var settings = {
     descriptorsActive: null, //define os descritores existentes nos produtos [array de produtos, quantidade de descritores]
     descriptorsPrevious: [], //armazena os descritores dos produtos clicados
@@ -164,7 +164,7 @@ var FCGrid$ = function () {
         product.adicionalD3=arr.adicionalD3;
         product.imgDet=arr.imgDet;
         product.imgAmp=arr.imgAmp;
-      }else{ fn.consoleLogFC({'FC_Log_Grid_v1' : 'json do subproduto inválido'}); }
+      }else{ fn.consoleLogFC({'FC_Log_Grid_v1' : 'json do subproduto inv?lido'}); }
     },
 
     magicZoomFC: function(id, novoArray, novoArrayAmp, FC_MaxImages, refreshZoom){
@@ -263,7 +263,7 @@ var FCGrid$ = function () {
             oPositionTableDiscount.innerHTML = "<div id='PriceAVista'><p>Para pagamentos à vista ganhe <b>" + iDescontoAvista + "% de desconto</b>.</p><p>Valor com desconto <b>" + FormatPrice(product.priceNum * ((100 - iDescontoAvista) / 100), FC$.Currency) + "</b></p></div>";
           }
         }
-        
+
         if(product.priceNum!=product.priceOri){
            return oPositionPrice.innerHTML="de <strike>"+FCLib$.FormatPreco(FormatPrice(product.priceOri,FC$.Currency))+"</strike> por <b>"+FCLib$.FormatPreco(FormatPrice(product.priceNum,FC$.Currency))+"</b> " + oMaxInstallments + oEconomyJS;
          }
@@ -558,7 +558,7 @@ var FCGrid$ = function () {
       }
     }
 
-    //todos os parâmetros do produto
+    //todos os par?metros do produto
     var aNameRGB=product.cor.split(options.separadorRGBCor), sNameColor=aNameRGB[0];
     if(options.cartOnPage){
       var IDSubProd=product.IDProduto, sParamsProd='&QTIncMult_'+IDSubProd+'='+iQtyIncMult;
@@ -619,12 +619,12 @@ var FCGrid$ = function () {
       }
     }
 
-    var oButton=fn.availableBuyProduct(product,sParms); //verificar disponibilidade e cria o botão [comprar/ esgotado/ consulte-nos]
+    var oButton=fn.availableBuyProduct(product,sParms); //verificar disponibilidade e cria o bot?o [comprar/ esgotado/ consulte-nos]
     fn.setPriceProduct(product); //atualiza o valor do produto de acordo com o valor do subproduto
-    fn.setCodeProduct(product); //atualza o código de referencia do produto
+    fn.setCodeProduct(product); //atualza o c?digo de referencia do produto
 
     var el=document.querySelectorAll('#idButtonBuyFC .FCBtnGrid');
-    if(el.length>0)for(var i=0; i< el.length;i++){el[i].parentNode.removeChild(el[i]);} //remove os botões já existem no html
+    if(el.length>0)for(var i=0; i< el.length;i++){el[i].parentNode.removeChild(el[i]);} //remove os botões que já existem no html
 
     var oPositionBtn = document.getElementById('idButtonBuyFC');
     oPositionBtn.appendChild(oButton);
@@ -643,7 +643,7 @@ var FCGrid$ = function () {
     }else{
       oPositionDetail.innerHTML=fn.getDetailsProduct();
     }
-    fn.consoleLogFC({'FC_Log_Grid_v1' : 'descritores do produto selecionado', 'dscr' : sParms.replace(/\&/g,', ').replace(/\=/g,' : ')}); /*Loga os parâmetros do produto selecionado*/
+    fn.consoleLogFC({'FC_Log_Grid_v1' : 'descritores do produto selecionado', 'dscr' : sParms.replace(/\&/g,', ').replace(/\=/g,' : ')}); /*Loga os par?metros do produto selecionado*/
   }
 
   //fnResetOptions:begin
@@ -654,7 +654,7 @@ var FCGrid$ = function () {
     var el=document.querySelectorAll('#idButtonBuyFC .FCBtnGrid');
     var elSelect=document.querySelectorAll('#idButtonBuyFC .FCBtnSelectedOption');
     if(el.length>0 && elSelect.length===0){
-      for(var i=0; i< el.length;i++){el[i].parentNode.removeChild(el[i]);} //remove os botões já existem no html
+      for(var i=0; i< el.length;i++){el[i].parentNode.removeChild(el[i]);} //remove os botões que já existem no html
       if(elSelect.length===0){
         var oButton=fn.availableBuyProduct(null);
         var oPositionBtn = document.getElementById('idButtonBuyFC');
@@ -670,7 +670,7 @@ var FCGrid$ = function () {
 
     if(srcImgDet!= null && srcImgAmp!= null)fn.imgView(srcImgDet, srcImgAmp, true);
 
-    fn.removeClass(document.querySelectorAll('#idNivelGridFC_'+ iNivelAtual+' .FCDescritorContent li'), 'FCSelectedGrid'); // remove classe das as LIs quando uma opção é clicada
+    fn.removeClass(document.querySelectorAll('#idNivelGridFC_'+ iNivelAtual+' .FCDescritorContent li'), 'FCSelectedGrid'); // remove classe das as LIs quando uma op??o ? clicada
     fn.addClass(objElementParent,"FCSelectedGrid"); // adiciona classe ao elemento quando o mesmo é clicada
     settings.descriptorsPrevious[parseInt(iNivelAtual)]=sDescritorAtual; // definir o descritor que foi clicado e adiciona a variável
 
@@ -808,7 +808,7 @@ var FCGrid$ = function () {
               }else{
                 var sBgColor = "#" + fn.getColor(prd['cor']).rgb;
               }
-              var sNameCor= options.colorName == false ? "&nbsp;" : fn.getColor(prd['cor']).name; //Exibe ou não o nome da cor
+              var sNameCor= options.colorName == false ? "&nbsp;" : fn.getColor(prd['cor']).name; //Exibe ou n?o o nome da cor
               sHtmlUL+="<li class=\""+ sDisabled +" "+ oFlagEsgotado.classLabel +"\" data-nivel=\""+i+"\" "+ oClickEvent +"\>"
                     +  options.htmlFlagChecked
                     +  "<span style=\"background:"+ sBgColor +"\" class=\"FCDescritorGrid "+ sClassDescritor +"\" data-attr=\""+ prd[aDestinosDescritores[i]] +"\""+ sDataImagesProd +"\ data-id=\""+ prd['IDProduto']+"\">"
@@ -816,7 +816,7 @@ var FCGrid$ = function () {
                     +  "</span>"
                     +"</li>";
             }
-            /* não é descritor cor */
+            /* não é descritor de cor */
             else{
               sHtmlUL+="<li class=\""+ sDisabled +" "+ oFlagEsgotado.classLabel +"\" data-nivel=\""+ i +"\" "+ oClickEvent +">"
                     +  options.htmlFlagChecked
@@ -979,7 +979,7 @@ var FCGrid$ = function () {
     }
 
     fn.setAttrProduct(oProd); //define o produto selecionado e inclui na variável product
-    var oButton = fn.availableBuyProduct(oProd, sParms); //verificar disponibilidade e cria o botão [comprar/ esgotado/ consulte-nos]
+    var oButton = fn.availableBuyProduct(oProd, sParms); //verificar disponibilidade e cria o bot?o [comprar/ esgotado/ consulte-nos]
     var el=document.querySelectorAll('#idButtonBuyFC .FCBtnGrid');
     if(el.length>0)for(var i=0; i< el.length;i++){el[i].parentNode.removeChild(el[i]);} //remove os botões já existem no html
 
@@ -999,7 +999,7 @@ var FCGrid$ = function () {
     if(imgDet!=="" && imgAmp!== "") return fn.imgView(imgDet,imgAmp,refresh);
   }
 
-  //inicia a função
+  //inicia a fun??o
   function init(id, aProductListGrid, aProductOnlyOneGrid){
 
     settings.idElementGrid = id; //set ID in DIV
